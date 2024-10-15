@@ -45,7 +45,7 @@ namespace FanDuel.SportsDepthChart.Core.Chart
             if (request.PositionDepth.HasValue)
             {
                 // Adds a player to the depth chart at a given position
-                // The added player would get priority. Anyone below that player in the depth chart would get moved down a  position_depth
+                // The added player would get priority. Anyone below that player in the depth chart would get moved down a position_depth
                 var chartdepthPositions = _context.PlayerChartPlacements.Where(p => p.Position == request.Position && p.PositionDepth >= request.PositionDepth.Value && p.ChartId == request.ChartId).OrderBy(p => p.PositionDepth);
                 foreach (var positions in chartdepthPositions)
                 {
@@ -73,7 +73,8 @@ namespace FanDuel.SportsDepthChart.Core.Chart
                 });
             }
 
-            return await _context.SaveChangesAsync(cancellationToken);
+            var res = await _context.SaveChangesAsync(cancellationToken);
+            return res;
         }
     }
 }

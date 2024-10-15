@@ -26,7 +26,7 @@ namespace FanDuel.SportsDepthChart.Core.Chart
 
         public async Task<List<RemovePlayerFromDepthChartCommandResponse>> Handle(GetBackupsQuery request, CancellationToken cancellationToken)
         {
-            var playerInPosition = await _context.PlayerChartPlacements.SingleOrDefaultAsync(p => p.Position == request.Position && p.Player.Id == request.PlayerNumber && p.ChartId == request.ChartId);
+            var playerInPosition = _context.PlayerChartPlacements.SingleOrDefault(p => p.Position == request.Position && p.PlayerId == request.PlayerNumber && p.ChartId == request.ChartId);
 
             var result = new List<RemovePlayerFromDepthChartCommandResponse>();
 

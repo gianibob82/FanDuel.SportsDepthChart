@@ -13,15 +13,15 @@ namespace FanDuel.SportsDepthChart.Infra
 {
     public class SportsDepthChartContext : DbContext, ISportsDepthChartContext
     {
-        public DbSet<PlayerEntity> Players { get; set; }
+        public virtual DbSet<PlayerEntity> Players { get; set; }
 
-        public DbSet<PlayerChartPlacementEntity> PlayerChartPlacements { get; set; }
+        public virtual DbSet<PlayerChartPlacementEntity> PlayerChartPlacements { get; set; }
 
-        public DbSet<ChartEntity> Charts { get; set; }
+        public virtual DbSet<ChartEntity> Charts { get; set; }
 
-        public DbSet<TeamEntity> Teams { get; set; }
+        public virtual DbSet<TeamEntity> Teams { get; set; }
 
-        public DbSet<SportEntity> Sports { get; set; }
+        public virtual DbSet<SportEntity> Sports { get; set; }
 
         public string DbPath { get; }
 

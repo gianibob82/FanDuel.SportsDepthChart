@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanDuel.SportsDepthChart.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanDuel.SportsDepthChart.Core", "src\FanDuel.SportsDepthChart.Core\FanDuel.SportsDepthChart.Core.csproj", "{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanDuel.SportsDepthChart.UnitTests", "tests\FanDuel.SportsDepthChart.UnitTests\FanDuel.SportsDepthChart.UnitTests.csproj", "{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{16278036-3E62-4F2A-84BE-02676450E1AF} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
 		{C053326C-A61A-4A42-A281-4A94E8076904} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
 		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
+		{DF0F6FCA-9266-4C10-9102-0F8F3ACC8E02} = {32A7E9C1-6B9B-4F5E-B930-DB089FB92D91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E307200-580F-482C-A20C-8C544787145B}
