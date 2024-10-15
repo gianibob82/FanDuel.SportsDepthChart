@@ -29,6 +29,10 @@ namespace FanDuel.SportsDepthChart.Core.Chart
         }
         public async Task<int> Handle(AddPlayerToDepthChartCommand request, CancellationToken cancellationToken)
         {
+            // cant add same player again to same position
+            if (_context.PlayerChartPlacements.Any(p => p.Position == request.Position && p.PlayerId == request.PlayerNumber))
+                return 0;
+
             var player = _context.Players.SingleOrDefault(p => p.TeamEntityId == request.TeamId && p.Id == request.PlayerNumber);
 
             if (player == null)
@@ -40,7 +44,6 @@ namespace FanDuel.SportsDepthChart.Core.Chart
                        TeamEntityId = request.TeamId
                 });
             }
-
 
             if (request.PositionDepth.HasValue)
             {

@@ -25,7 +25,7 @@ namespace FanDuel.SportsDepthChart.Core.Chart
         {
             var result = new Dictionary<string, List<PlayerDepthChartResponse>>();
 
-            var allPlayersInChart = _context.PlayerChartPlacements.Where(c => c.ChartId == request.ChartId).ToList();
+            var allPlayersInChart = _context.PlayerChartPlacements.AsNoTracking().Where(c => c.ChartId == request.ChartId).ToList();
 
             foreach (var position in allPlayersInChart.DistinctBy(p => p.Position).Select(p => p.Position))
             {

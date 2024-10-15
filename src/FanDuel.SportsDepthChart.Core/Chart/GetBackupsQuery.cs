@@ -34,7 +34,7 @@ namespace FanDuel.SportsDepthChart.Core.Chart
             if (playerInPosition == null)
                 return result;
 
-            var playerBackups = from chart in _context.PlayerChartPlacements
+            var playerBackups = from chart in _context.PlayerChartPlacements.AsNoTracking()
                         join player in _context.Players on chart.PlayerId equals player.Id
                         where chart.Position == request.Position && chart.PositionDepth > playerInPosition.PositionDepth && chart.ChartId == request.ChartId
                         select new
