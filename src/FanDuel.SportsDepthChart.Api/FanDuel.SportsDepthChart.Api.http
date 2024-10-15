@@ -1,0 +1,6 @@
+@FanDuel.SportsDepthChart.Api_HostAddress = http://localhost:5077
+
+GET {{FanDuel.SportsDepthChart.Api_HostAddress}}/chartdepth/
+Accept: application/json
+
+###
