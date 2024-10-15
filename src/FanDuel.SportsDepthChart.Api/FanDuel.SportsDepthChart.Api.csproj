@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FanDuel.SportsDepthChart.Infra\FanDuel.SportsDepthChart.Infra.csproj" />
+    <ProjectReference Include="..\FanDuel.SportsDepthChart.Infra\FanDuel.SportsDepthChart.Infra.csproj" />
   </ItemGroup>
 
 </Project>

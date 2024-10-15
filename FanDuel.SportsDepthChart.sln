@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{32A7E9C1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanDuel.SportsDepthChart.Api", "src\FanDuel.SportsDepthChart.Api\FanDuel.SportsDepthChart.Api.csproj", "{16278036-3E62-4F2A-84BE-02676450E1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanDuel.SportsDepthChart.Core", "FanDuel.SportsDepthChart.Core\FanDuel.SportsDepthChart.Core.csproj", "{F41BA8DE-C1C4-4711-B487-04F48DC3485B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanDuel.SportsDepthChart.Infra", "src\FanDuel.SportsDepthChart.Infra\FanDuel.SportsDepthChart.Infra.csproj", "{C053326C-A61A-4A42-A281-4A94E8076904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanDuel.SportsDepthChart.Infra", "FanDuel.SportsDepthChart.Infra\FanDuel.SportsDepthChart.Infra.csproj", "{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanDuel.SportsDepthChart.Core", "src\FanDuel.SportsDepthChart.Core\FanDuel.SportsDepthChart.Core.csproj", "{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +23,22 @@ Global
 		{16278036-3E62-4F2A-84BE-02676450E1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16278036-3E62-4F2A-84BE-02676450E1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16278036-3E62-4F2A-84BE-02676450E1AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F41BA8DE-C1C4-4711-B487-04F48DC3485B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F41BA8DE-C1C4-4711-B487-04F48DC3485B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F41BA8DE-C1C4-4711-B487-04F48DC3485B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F41BA8DE-C1C4-4711-B487-04F48DC3485B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C053326C-A61A-4A42-A281-4A94E8076904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C053326C-A61A-4A42-A281-4A94E8076904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C053326C-A61A-4A42-A281-4A94E8076904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C053326C-A61A-4A42-A281-4A94E8076904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{16278036-3E62-4F2A-84BE-02676450E1AF} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
-		{F41BA8DE-C1C4-4711-B487-04F48DC3485B} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
-		{A5425DB3-4BD9-42C4-9298-2E9E8CF7A251} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
+		{C053326C-A61A-4A42-A281-4A94E8076904} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
+		{F59DF91A-DEA9-40E6-B9AB-4E2DBE75F60D} = {D6940760-F55E-4DD8-A16F-A3FCEB63F156}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E307200-580F-482C-A20C-8C544787145B}
