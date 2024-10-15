@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace FanDuel.SportsDepthChart.Core.Chart
 {
-    public class RemovePlayerFromDepthChartCommand : BaseCommandQuery, IRequest<List<RemovePlayerFromDepthChartCommandResponse>>
+    public class RemovePlayerFromDepthChartCommand : BaseCommandQuery, IRequest<List<PlayerDepthChartResponse>>
     {
         public string Position { get; set; }
 
         public int PlayerNumber { get; set; }
     }
 
-    public class RemovePlayerFromDepthChartCommandHandler : IRequestHandler<RemovePlayerFromDepthChartCommand, List<RemovePlayerFromDepthChartCommandResponse>>
+    public class RemovePlayerFromDepthChartCommandHandler : IRequestHandler<RemovePlayerFromDepthChartCommand, List<PlayerDepthChartResponse>>
     {
         private readonly ISportsDepthChartContext _context;
 
@@ -24,11 +24,11 @@ namespace FanDuel.SportsDepthChart.Core.Chart
         {
             _context = context;
         }
-        public async Task<List<RemovePlayerFromDepthChartCommandResponse>> Handle(RemovePlayerFromDepthChartCommand request, CancellationToken cancellationToken)
+        public async Task<List<PlayerDepthChartResponse>> Handle(RemovePlayerFromDepthChartCommand request, CancellationToken cancellationToken)
         {
-            var playerToRemove = _context.PlayerChartPlacements.SingleOrDefault(p => p.Position == request.Position && p.Player.Id == request.PlayerNumber && p.ChartId == request.ChartId);
+            var playerToRemove = _context.PlayerChartPlacements.SingleOrDefault(p => p.Position == request.Position && p.PlayerId == request.PlayerNumber && p.ChartId == request.ChartId);
 
-            var result = new List<RemovePlayerFromDepthChartCommandResponse>();
+            var result = new List<PlayerDepthChartResponse>();
 
             // An empty list should be returned if that player is not listed in the depth chart at that position
             if (playerToRemove == null)
@@ -45,10 +45,10 @@ namespace FanDuel.SportsDepthChart.Core.Chart
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            result.Add(new RemovePlayerFromDepthChartCommandResponse
+            result.Add(new PlayerDepthChartResponse
             {
                 PlayerNumber = request.PlayerNumber,
-                //PlayerName = playerToRemove.Player.Name,
+                PlayerName = _context.Players.Single(p => p.Id == playerToRemove.PlayerId).Name,
                 PlayerChartDepth = playerToRemove.PositionDepth,
                 PlayerPosition = playerToRemove.Position
             });
@@ -57,10 +57,10 @@ namespace FanDuel.SportsDepthChart.Core.Chart
         }
     }
 
-    public class RemovePlayerFromDepthChartCommandResponse
+    public class PlayerDepthChartResponse
     {
         public int PlayerNumber { get; set; }
-        //public string PlayerName { get; set; }
+        public string PlayerName { get; set; }
         public string PlayerPosition { get; set; }
         public int PlayerChartDepth { get; set; }
     }

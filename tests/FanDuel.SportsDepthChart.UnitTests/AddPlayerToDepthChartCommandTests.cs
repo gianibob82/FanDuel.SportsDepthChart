@@ -32,15 +32,20 @@ namespace FanDuel.SportsDepthChart.UnitTests
             };
 
             var mockContext = new Mock<ISportsDepthChartContext>();
-            mockContext.Setup(x => x.PlayerChartPlacements).ReturnsDbSet(chartPlacement);
 
-            //player created if doesnt exist
-            mockContext.Setup(x => x.Players).ReturnsDbSet(players);
+            mockContext.Setup(x => x.PlayerChartPlacements).ReturnsDbSet(chartPlacement);
 
             mockContext.Setup(m => m.PlayerChartPlacements.Add(It.IsAny<PlayerChartPlacementEntity>()))
             .Callback<PlayerChartPlacementEntity>(entity =>
             {
                 chartPlacement.Add(entity);
+            });
+
+            mockContext.Setup(x => x.Players).ReturnsDbSet(players);
+            mockContext.Setup(m => m.Players.Add(It.IsAny<PlayerEntity>()))
+            .Callback<PlayerEntity>(entity =>
+            {
+                players.Add(entity);
             });
 
             var command = new AddPlayerToDepthChartCommand()
@@ -90,15 +95,20 @@ namespace FanDuel.SportsDepthChart.UnitTests
             };
 
             var mockContext = new Mock<ISportsDepthChartContext>();
-            mockContext.Setup(x => x.PlayerChartPlacements).ReturnsDbSet(chartPlacement);
 
-            //player created if doesnt exist
-            mockContext.Setup(x => x.Players).ReturnsDbSet(players);
+            mockContext.Setup(x => x.PlayerChartPlacements).ReturnsDbSet(chartPlacement);
 
             mockContext.Setup(m => m.PlayerChartPlacements.Add(It.IsAny<PlayerChartPlacementEntity>()))
             .Callback<PlayerChartPlacementEntity>(entity =>
             {
                 chartPlacement.Add(entity);
+            });
+
+            mockContext.Setup(x => x.Players).ReturnsDbSet(players);
+            mockContext.Setup(m => m.Players.Add(It.IsAny<PlayerEntity>()))
+            .Callback<PlayerEntity>(entity =>
+            {
+                players.Add(entity);
             });
 
             var command = new AddPlayerToDepthChartCommand()

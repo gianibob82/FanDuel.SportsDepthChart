@@ -22,21 +22,21 @@ namespace FanDuel.SportsDepthChart.Api.Controllers
         }
 
         [HttpDelete(Name = "RemovePlayer")]
-        public Task<List<RemovePlayerFromDepthChartCommandResponse>> RemovePlayer(RemovePlayerFromDepthChartCommand command)
+        public Task<List<PlayerDepthChartResponse>> RemovePlayer(RemovePlayerFromDepthChartCommand command)
         {
             var result = _mediator.Send(command);
             return result;
         }
 
         [HttpGet("GetPlayerBackups")]
-        public Task<List<RemovePlayerFromDepthChartCommandResponse>> GetPlayerBackups([FromQuery] GetBackupsQuery query)
+        public Task<List<PlayerDepthChartResponse>> GetPlayerBackups([FromQuery] GetBackupsQuery query)
         {
             var result = _mediator.Send(query);
             return result;
         }
 
         [HttpGet("GetFullDepthChart")]
-        public Task<Dictionary<string, List<RemovePlayerFromDepthChartCommandResponse>>> GetFullDepthChart()
+        public Task<Dictionary<string, List<PlayerDepthChartResponse>>> GetFullDepthChart()
         {
             var query = new GetFullDepthChartQuery();
             var result = _mediator.Send(query);
