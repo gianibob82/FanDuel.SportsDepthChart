@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 
 namespace FanDuel.SportsDepthChart.Core.Chart
 {
-    public class RemovePlayerFromDepthChartCommand : BaseCommandQuery, IRequest<List<PlayerDepthChartResponse>>
+    public class RemovePlayerFromDepthChartCommand : ChartBaseCommandQuery, IRequest<List<PlayerDepthChartResponse>>
     {
-        public string Position { get; set; }
 
-        public int PlayerNumber { get; set; }
     }
 
     public class RemovePlayerFromDepthChartCommandHandler : IRequestHandler<RemovePlayerFromDepthChartCommand, List<PlayerDepthChartResponse>>

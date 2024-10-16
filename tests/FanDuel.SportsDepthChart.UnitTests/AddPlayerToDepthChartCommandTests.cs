@@ -52,7 +52,7 @@ namespace FanDuel.SportsDepthChart.UnitTests
             {
                 PlayerName = "Tom Brady",
                 PlayerNumber = 12,
-                Position = "QB",
+                Position = "qb",
                 PositionDepth = 1
             };
 

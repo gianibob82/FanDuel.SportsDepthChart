@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FanDuel.SportsDepthChart.Core
 {
-    public class BaseCommandQuery
+    public abstract class BaseCommandQuery
     {
         public int SportId => 1;
         public int TeamId => 1;

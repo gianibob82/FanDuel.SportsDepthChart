@@ -1,6 +1,7 @@
 using FanDuel.SportsDepthChart.Core.Chart;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FanDuel.SportsDepthChart.Api.Controllers
 {
@@ -29,8 +30,13 @@ namespace FanDuel.SportsDepthChart.Api.Controllers
         }
 
         [HttpGet("GetPlayerBackups")]
-        public Task<List<PlayerDepthChartResponse>> GetPlayerBackups([FromQuery] GetBackupsQuery query)
+        public Task<List<PlayerDepthChartResponse>> GetPlayerBackups([FromQuery] string position, [FromQuery] int playerNumber)
         {
+            GetBackupsQuery query = new GetBackupsQuery { 
+                 PlayerNumber = playerNumber,
+                  Position = position
+            };
+
             var result = _mediator.Send(query);
             return result;
         }

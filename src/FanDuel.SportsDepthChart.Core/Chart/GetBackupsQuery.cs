@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace FanDuel.SportsDepthChart.Core.Chart
 {
-    public class GetBackupsQuery : BaseCommandQuery, IRequest<List<PlayerDepthChartResponse>>
+    public class GetBackupsQuery : ChartBaseCommandQuery, IRequest<List<PlayerDepthChartResponse>>
     {
-        public string Position { get; set; }
-
-        public int PlayerNumber { get; set; }
+        
     }
 
     public class GetBackupsQueryHandler : IRequestHandler<GetBackupsQuery, List<PlayerDepthChartResponse>>
