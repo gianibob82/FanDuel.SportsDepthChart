@@ -8,6 +8,6 @@ Majority of business logic inside FanDuel.SportsDepthChart\src\FanDuel.SportsDep
 
 Unit tests are in FanDuel.SportsDepthChart.UnitTests and cover all commands/queries
 
-Regarding scaling the app, I've added tables to cover other sports and other teams.
+Regarding scaling the app, I've added tables to cover other sports and other teams but atm aren't in use.
 
  
